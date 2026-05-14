@@ -1,0 +1,279 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #000000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Typography & Layout */
+.section-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.box-border {
+    background-color: #d9d9d9;
+    border: 2px solid #2b9ed4;
+}
+
+/* Home Header */
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.title-container h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    line-height: 1.1;
+}
+
+.logo-emoji {
+    font-size: 3rem;
+    margin-top: -10px;
+}
+
+.profile-icon {
+    font-size: 1.5rem;
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Balance Card */
+.balance-card {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.balance-amount {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.balance-actions {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+}
+
+.btn-small {
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-green { background-color: #2ca02c; }
+.btn-blue { background-color: #0066cc; font-style: italic;}
+
+/* Recent Card */
+.recent-card {
+    padding: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Nav Grid */
+.nav-grid {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.nav-square-btn {
+    flex: 1;
+    aspect-ratio: 1;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-align: left;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.icon-large {
+    font-size: 2rem;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.bottom-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+/* Inner Pages Header */
+.page-header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.page-header h2 {
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+.home-icon-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: black;
+}
+
+.page-header.left-align {
+    text-align: left;
+    height: 40px;
+}
+
+.page-title-left {
+    font-weight: normal;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* Form Container */
+.form-container {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group-inline {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group-inline label {
+    width: 80px;
+    font-size: 0.9rem;
+}
+
+.form-group-inline input,
+.form-group-inline select {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    background: white;
+}
+
+.scan-receipt-container {
+    background: white;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+.scan-btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Huge Buttons */
+.form-actions-huge {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.btn-huge {
+    border: none;
+    width: 100%;
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.btn-bright-green { background-color: #32cd32; color: black; }
+.btn-bright-red { background-color: #e31818; color: black; }
+
+.btn-subtext {
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.hidden-message {
+    display: none;
+}
+.hidden-message.show {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Transactions List */
+.transactions-list-container {
+    min-height: 400px;
+    padding: 10px;
+}
+
+.transactions-list {
+    list-style: none;
+}
+
+.transactions-list li {
+    padding: 8px 0;
+    font-size: 0.95rem;
+}
+
+.empty-state {
+    text-align: center;
+    margin-top: 20px;
+}

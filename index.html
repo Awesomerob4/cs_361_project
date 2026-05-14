@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Watch</title>
+    <!-- Using Arial/sans-serif as shown in the presentation -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Home Page -->
+        <section id="home-page" class="page active">
+            <header class="home-header">
+                <div class="title-container">
+                    <h1>Wallet<br>Watch</h1>
+                    <div class="logo-emoji">🔍👛</div>
+                </div>
+                <div class="profile-icon">👤</div>
+            </header>
+            
+            <div class="section-title">Balance</div>
+            <div class="balance-card box-border">
+                <div class="balance-amount" id="current-balance">$0.00</div>
+                <div class="balance-actions">
+                    <button class="btn-small btn-green" onclick="navigateTo('update-balance-page')">Edit balance</button>
+                    <button class="btn-small btn-blue" onclick="alert('Bank linking will be added later!')">Link Bank Account</button>
+                </div>
+            </div>
+
+            <div class="section-title">Recently:</div>
+            <div class="recent-card box-border" id="recent-transaction">
+                <!-- Injected via JS -->
+                No recent transactions
+            </div>
+
+            <div class="nav-grid">
+                <button class="nav-square-btn box-border" onclick="navigateTo('add-expense-page')">
+                    Add<br>Transaction<br><span class="icon-large">➕</span>
+                </button>
+                <button class="nav-square-btn box-border" onclick="navigateTo('transactions-page')">
+                    View<br>Transactions<br><span class="icon-large">⟶</span>
+                </button>
+            </div>
+
+            <div class="bottom-text">Keep track of your spending!</div>
+        </section>
+
+        <!-- Add Transaction Page -->
+        <section id="add-expense-page" class="page">
+            <header class="page-header">
+                <button class="home-icon-btn" onclick="navigateTo('home-page')">🏠</button>
+                <h2>Add Transaction</h2>
+            </header>
+
+            <form id="add-expense-form">
+                <div class="form-container box-border">
+                    <div class="form-group-inline">
+                        <label for="expense-name">Name:</label>
+                        <input type="text" id="expense-name" required>
+                    </div>
+
+                    <div class="form-group-inline">
+                        <label for="expense-amount">Amount:</label>
+                        <input type="number" id="expense-amount" step="0.01" min="0.01" required>
+                    </div>
+
+                    <div class="form-group-inline">
+                        <label for="expense-time">Time:</label>
+                        <input type="time" id="expense-time" required>
+                    </div>
+                    
+                    <div class="form-group-inline">
+                        <label for="expense-place">Place:</label>
+                        <input type="text" id="expense-place" required>
+                    </div>
+
+                    <div class="form-group-inline">
+                        <label for="expense-category">Category:</label>
+                        <select id="expense-category" required>
+                            <option value="Food">Food</option>
+                            <option value="Gas">Gas</option>
+                            <option value="Fees">Fees</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="scan-receipt-container">
+                        <button type="button" class="scan-btn" onclick="scanReceipt()">
+                            <em>Scan Receipt</em> <span>📷</span>
+                        </button>
+                    </div>
+                </div>
+                <p id="scan-message" class="hidden-message" style="text-align: center;">Receipt scanning unavailable. Use manual entry.</p>
+
+                <div class="form-actions-huge">
+                    <button type="submit" class="btn-huge btn-bright-green">
+                        Confirm<br>Transaction
+                    </button>
+                    
+                    <button type="button" class="btn-huge btn-bright-red" onclick="cancelExpense()">
+                        Cancel<br><span class="btn-subtext">(Data will be lost)</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Transactions Page -->
+        <section id="transactions-page" class="page">
+            <header class="page-header left-align">
+                <button class="home-icon-btn" onclick="navigateTo('home-page')">🏠</button>
+            </header>
+            <h2 class="page-title-left">Previous Transactions:</h2>
+
+            <div class="transactions-list-container box-border">
+                <div id="empty-state" class="empty-state">
+                    No transactions yet.
+                </div>
+                <ul id="transactions-list" class="transactions-list">
+                    <!-- Transactions will be injected here via JS -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Update Balance / Deposit Page -->
+        <section id="update-balance-page" class="page">
+            <header class="page-header">
+                <button class="home-icon-btn" onclick="navigateTo('home-page')">🏠</button>
+                <h2>Edit Balance</h2>
+            </header>
+
+            <form id="update-balance-form">
+                <div class="form-container box-border" style="padding: 20px;">
+                    <div class="form-group-inline">
+                        <label for="deposit-amount">New Deposit:</label>
+                        <input type="number" id="deposit-amount" step="0.01" min="0.01" required>
+                    </div>
+                </div>
+
+                <div class="form-actions-huge" style="margin-top: 20px;">
+                    <button type="submit" class="btn-huge btn-bright-green">
+                        Confirm<br>Update
+                    </button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

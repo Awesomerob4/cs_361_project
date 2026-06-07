@@ -2,10 +2,37 @@
 
 A simple, interactive Budget Tracker application built with plain HTML, CSS, and JavaScript.
 
-## How to Run the App
-1. Open the `cs_361_project` folder.
-2. Double-click the `index.html` file to open it in any modern web browser (e.g., Chrome, Edge, Safari, Firefox).
-3. No server or build tools are required. The app uses `localStorage` to save your data between page refreshes.
+## How to Run the App & Microservices
+
+To fully run the Wallet Watch Tracker and its integrated microservices, you must launch all five processes in separate terminal windows:
+
+### Prerequisites
+Make sure you have Python installed. Install the necessary Python dependencies:
+```bash
+python -m pip install fastapi uvicorn pydantic aiosqlite pydantic-settings sqlalchemy asyncpg alembic
+```
+
+### Process Startup Layout
+Open 5 separate terminals and run each command in its respective directory:
+
+*   **Terminal 1: Wallet Watch Main Program**
+    Simply open the project folder `c:\Users\robyd\OneDrive\Desktop\cs361\wallet watch\cs_361_project` and double-click `index.html` to run the frontend app in a web browser.
+*   **Terminal 2: Notification/Reminder Microservice (Flask)**
+    - Directory: `c:\Users\robyd\OneDrive\Desktop\cs361\reminder microservice\microservice-3`
+    - Command: `python app.py`
+    - Port: **5001**
+*   **Terminal 3: Statistics Microservice (FastAPI)**
+    - Directory: `c:\Users\robyd\OneDrive\Desktop\cs361\statistics microservice\Statistics`
+    - Command: `python main.py`
+    - Port: **5003** (Configured on 5003 to avoid local port 5000 conflicts)
+*   **Terminal 4: Mode Microservice (FastAPI)**
+    - Directory: `c:\Users\robyd\OneDrive\Desktop\cs361\mode microservice\Mode`
+    - Command: `python main.py`
+    - Port: **6000**
+*   **Terminal 5: Message Broadcast Microservice (FastAPI)**
+    - Directory: `c:\Users\robyd\OneDrive\Desktop\cs361\broadcast message microservice\osu_cs361-bp-microservice-BroadcastMessaging`
+    - Command: `python -m uvicorn app.main:app --reload --port 8000`
+    - Port: **8000** (Configured using a local SQLite database in .env)
 
 ## 3 Implemented User Stories (Functional Requirements)
 1. **Add Expense Transaction**: Users can navigate to the "Add Expense" screen, enter valid expense details (description, amount, category, date), and click "Confirm". The transaction is saved to the history, and the current balance is decreased by the expense amount.

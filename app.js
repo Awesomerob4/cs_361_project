@@ -291,7 +291,7 @@ async function triggerSpendingStatistics() {
     }
 }
 
-// Calls the Mode Microservice on port 6000
+// Calls the Mode Microservice on port 5004
 async function triggerMostFrequentCategory() {
     const loadingEl = document.getElementById('mode-loading');
     const errorEl = document.getElementById('mode-error');
@@ -331,7 +331,7 @@ async function triggerMostFrequentCategory() {
     } catch (err) {
         loadingEl.style.display = 'none';
         errorEl.style.display = 'block';
-        errorEl.textContent = `Error: ${err.message}. Make sure the Mode Microservice is running on port 6000.`;
+        errorEl.textContent = `Error: ${err.message}. Make sure the Mode Microservice is running on port 5004.`;
     }
 }
 

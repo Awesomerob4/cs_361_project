@@ -3,7 +3,7 @@
 
 const REMINDER_SERVICE_URL = "http://127.0.0.1:5001";
 const STATISTICS_SERVICE_URL = "http://127.0.0.1:5003";
-const MODE_SERVICE_URL = "http://127.0.0.1:6000";
+const MODE_SERVICE_URL = "http://127.0.0.1:5004";
 const MESSAGE_SERVICE_URL = "http://127.0.0.1:8000";
 
 // ==========================================
@@ -94,10 +94,10 @@ async function fetchSpendingStatistics(amounts, threshold) {
 
 // ==========================================
 // 3. Mode Microservice
-// Calls the FastAPI Mode Microservice on port 6000
+// Calls the FastAPI Mode Microservice on port 5004
 // ==========================================
 async function fetchMostFrequentCategory(categories) {
-    console.log(`[Mode Service Request] Posting to port 6000 with categories:`, categories);
+    console.log(`[Mode Service Request] Posting to port 5004 with categories:`, categories);
     
     // Programmatic HTTP request/response communication to mode and frequency endpoints
     const modeUrl = `${MODE_SERVICE_URL}/mode/`;

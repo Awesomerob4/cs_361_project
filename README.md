@@ -28,7 +28,7 @@ Open 5 separate terminals and run each command in its respective directory:
 *   **Terminal 4: Mode Microservice (FastAPI)**
     - Directory: `c:\Users\robyd\OneDrive\Desktop\cs361\mode microservice\Mode`
     - Command: `python main.py`
-    - Port: **6000**
+    - Port: **5004**
 *   **Terminal 5: Message Broadcast Microservice (FastAPI)**
     - Directory: `c:\Users\robyd\OneDrive\Desktop\cs361\broadcast message microservice\osu_cs361-bp-microservice-BroadcastMessaging`
     - Command: `python -m uvicorn app.main:app --reload --port 8000`

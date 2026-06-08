@@ -1,10 +1,10 @@
 // microserviceClient.js
 // Client API helper for calling the CS361 Microservices
 
-const REMINDER_SERVICE_URL = "http://localhost:5001";
-const STATISTICS_SERVICE_URL = "http://localhost:5003";
-const MODE_SERVICE_URL = "http://localhost:6000";
-const MESSAGE_SERVICE_URL = "http://localhost:8000";
+const REMINDER_SERVICE_URL = "http://127.0.0.1:5001";
+const STATISTICS_SERVICE_URL = "http://127.0.0.1:5003";
+const MODE_SERVICE_URL = "http://127.0.0.1:6000";
+const MESSAGE_SERVICE_URL = "http://127.0.0.1:8000";
 
 // ==========================================
 // 1. Notification/Reminder Microservice
